@@ -8,6 +8,7 @@ import { Categories } from "@chec/commerce.js/features/categories";
 
 export async function getServerSideProps() {
   const merchant = await commerce.merchants.about();
+
   const { data: categories } = await commerce.categories.list();
   const { data: products } = await commerce.products.list();
   console.log(products);
@@ -21,13 +22,13 @@ export async function getServerSideProps() {
   };
 }
 
-type myProps = {
-  merchant: Merchants;
-  categories: Categories;
-  products: Products[];
-};
+// type myProps = {
+//   merchant: Merchants;
+//   categories: Categories;
+//   products: Products[];
+// };
 
-const Home: NextPage = (props: any) => {
+const Home: NextPage = (props:any ) => {
   return (
     <>
       <div className="bg-white py-6 sm:py-8 lg:py-12">
